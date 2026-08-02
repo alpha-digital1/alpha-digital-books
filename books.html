@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Books — Alpha Digital</title>
+  <meta name="description" content="Browse books from Alpha Digital. Buy on Amazon.">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Alpha Digital Books",
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"url":"/books/book-1.html"},
+      {"@type":"ListItem","position":2,"url":"/books/book-2.html"},
+      {"@type":"ListItem","position":3,"url":"/books/book-3.html"}
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header container">
+    <a class="brand" href="/">
+      <img src="/assets/images/logo.svg" alt="Alpha Digital logo" width="48" height="48">
+      <span class="brand-text">Alpha Digital</span>
+    </a>
+    <nav class="site-nav">
+      <a href="/">Home</a>
+      <a href="/books.html">Books</a>
+      <a href="/blog/">Blog</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1>Books</h1>
+    <p class="lead">Our selected titles — click to read more and buy on Amazon.</p>
+    <div class="grid books-grid">
+      <article class="card">
+        <a href="/books/book-1.html">
+          <img src="/assets/images/book1.svg" alt="Sample Book 1 cover" loading="lazy">
+          <h3>Sample Book Title One</h3>
+        </a>
+        <p class="card-meta">Brief blurb for searchers and browsers.</p>
+      </article>
+
+      <article class="card">
+        <a href="/books/book-2.html">
+          <img src="/assets/images/book2.svg" alt="Sample Book 2 cover" loading="lazy">
+          <h3>Sample Book Title Two</h3>
+        </a>
+        <p class="card-meta">Brief blurb for searchers and browsers.</p>
+      </article>
+
+      <article class="card">
+        <a href="/books/book-3.html">
+          <img src="/assets/images/book3.svg" alt="Sample Book 3 cover" loading="lazy">
+          <h3>Sample Book Title Three</h3>
+        </a>
+        <p class="card-meta">Brief blurb for searchers and browsers.</p>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer container">
+    <p>&copy; <span id="yearFooter"></span> Alpha Digital</p>
+  </footer>
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>

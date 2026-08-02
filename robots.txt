@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://alpha-digital1.github.io/alpha-digital-books/sitemap.xml

@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Alpha Digital Books — Modern Self-Published Books</title>
+  <meta name="description" content="Alpha Digital Books — premium indie books on Amazon KDP. Browse books, read the blog, and buy on Amazon.">
+  <meta name="keywords" content="books, self-published, Amazon KDP, ebooks, Alpha Digital">
+  <meta property="og:title" content="Alpha Digital Books" />
+  <meta property="og:description" content="Premium indie books on Amazon KDP. Browse titles, read the blog, and buy on Amazon." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://alpha-digital1.github.io/alpha-digital-books/" />
+  <meta property="og:image" content="/assets/images/book1.svg" />
+  <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="alternate" type="application/rss+xml" title="Alpha Digital Books RSS" href="/rss.xml" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Alpha Digital",
+    "url": "https://alpha-digital1.github.io/alpha-digital-books/",
+    "logo": "https://alpha-digital1.github.io/alpha-digital-books/assets/images/logo.svg",
+    "sameAs": []
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">
+        <img src="/assets/images/logo.svg" alt="Alpha Digital logo" class="logo" width="64" height="64">
+        <span class="brand-text">Alpha Digital</span>
+      </a>
+      <button id="navToggle" class="nav-toggle" aria-expanded="false">☰</button>
+      <nav class="site-nav" id="siteNav">
+        <a href="/">Home</a>
+        <a href="/books.html">Books</a>
+        <a href="/blog/">Blog</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container">
+        <h1>Alpha Digital Books</h1>
+        <p class="lead">Premium self-published books. Discover, read, and buy on Amazon.</p>
+        <p><a class="btn primary" href="/books.html">Browse Books</a></p>
+        <form class="newsletter" action="https://formspree.io/f/your-form-id" method="POST">
+          <label for="email">Join our newsletter</label>
+          <div class="newsletter-row">
+            <input id="email" name="email" type="email" placeholder="Your email" required>
+            <button class="btn" type="submit">Subscribe</button>
+          </div>
+          <p class="muted">We’ll send new releases and promos. Replace Formspree action with your endpoint.</p>
+        </form>
+      </div>
+    </section>
+
+    <section class="container featured">
+      <h2>Featured Books</h2>
+      <div class="grid books-grid">
+        <article class="card">
+          <a href="/books/book-1.html">
+            <img src="/assets/images/book1.svg" alt="Sample Book 1 cover" loading="lazy">
+            <h3>Sample Book Title One</h3>
+          </a>
+          <p class="card-meta">Short blurb about the book. Engaging, benefits-focused sentence to encourage clicks.</p>
+          <p><a class="btn secondary" href="/books/book-1.html">View</a> <a class="btn amazon" href="#">Buy on Amazon</a></p>
+        </article>
+
+        <article class="card">
+          <a href="/books/book-2.html">
+            <img src="/assets/images/book2.svg" alt="Sample Book 2 cover" loading="lazy">
+            <h3>Sample Book Title Two</h3>
+          </a>
+          <p class="card-meta">Short blurb about the book. Engaging, benefits-focused sentence to encourage clicks.</p>
+          <p><a class="btn secondary" href="/books/book-2.html">View</a> <a class="btn amazon" href="#">Buy on Amazon</a></p>
+        </article>
+
+        <article class="card">
+          <a href="/books/book-3.html">
+            <img src="/assets/images/book3.svg" alt="Sample Book 3 cover" loading="lazy">
+            <h3>Sample Book Title Three</h3>
+          </a>
+          <p class="card-meta">Short blurb about the book. Engaging, benefits-focused sentence to encourage clicks.</p>
+          <p><a class="btn secondary" href="/books/book-3.html">View</a> <a class="btn amazon" href="#">Buy on Amazon</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="container seo-blog">
+      <h2>From the Blog</h2>
+      <div class="grid post-grid">
+        <article class="post-card">
+          <a href="/blog/post-example.html">
+            <h3>How to Market Your Book on Amazon</h3>
+          </a>
+          <p class="muted">Tips and SEO-friendly steps to increase visibility on Amazon KDP.</p>
+        </article>
+      </div>
+      <p><a class="btn" href="/blog/">Read more on the blog</a></p>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p>&copy; <span id="year"></span> Alpha Digital — Independent publisher.</p>
+        <p><a href="/sitemap.xml">Sitemap</a> • <a href="/robots.txt">robots.txt</a> • <a href="/rss.xml">RSS</a></p>
+      </div>
+      <nav class="footer-nav">
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+        <a href="#">Affiliate disclosure</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>

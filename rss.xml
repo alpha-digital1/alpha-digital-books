@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+  <channel>
+    <title>Alpha Digital Blog</title>
+    <link>https://alpha-digital1.github.io/alpha-digital-books/</link>
+    <description>Alpha Digital — blog for authors and readers</description>
+    <item>
+      <title>How to Market Your Book on Amazon</title>
+      <link>https://alpha-digital1.github.io/alpha-digital-books/blog/post-example.html</link>
+      <pubDate>Thu, 01 Jan 2026 00:00:00 +0000</pubDate>
+      <description>Tips and strategies to promote your book on Amazon KDP.</description>
+    </item>
+  </channel>
+</rss>

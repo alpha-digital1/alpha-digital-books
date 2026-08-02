@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0" stop-color="#0b5f8a" />
+      <stop offset="1" stop-color="#084c70" />
+    </linearGradient>
+  </defs>
+  <g>
+    <circle cx="60" cy="60" r="56" fill="#fff" stroke="#0b5f8a" stroke-width="4" />
+    <rect x="18" y="70" width="84" height="20" rx="4" fill="#f7f9fb" />
+    <path d="M28 68 L60 36 L92 68" fill="none" stroke="url(#g)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+    <text x="60" y="92" font-family="sans-serif" font-size="12" text-anchor="middle" fill="#0b5f8a" font-weight="700">ALPHA DIGITAL</text>
+  </g>
+</svg>
