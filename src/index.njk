@@ -1,21 +1,98 @@
 ---
 layout: layouts/base.njk
 title: "Alpha Digital — Premium self-published books"
+description: "Premium independent books on Amazon KDP. Browse journals, planners, coloring books, and activity books designed to delight readers and convert on Amazon."
 ---
 
 <section class="hero container">
   <div class="hero-inner">
-    <h1>Alpha Digital Books</h1>
-    <p class="lead">Premium independent books on Amazon KDP. Discover journals, planners, coloring books, and activity books designed to delight readers and convert on Amazon.</p>
-    <p><a class="btn primary" href="/books/">Browse Books</a></p>
+    <div class="hero-copy">
+      <p class="eyebrow">Independent Publisher</p>
+      <h1>Beautifully designed books that readers love — made for Amazon KDP</h1>
+      <p class="lead">High-quality journals, planners, coloring books, and activity books crafted to delight readers and drive sales on Amazon. Browse our curated collection, read in-depth guides, and grab a free printable to get started.</p>
+      <p class="hero-ctas">
+        <a class="btn primary" href="/books/">Browse Books</a>
+        <a class="btn" href="#featured">Featured</a>
+      </p>
+    </div>
+    <div class="hero-media" aria-hidden="true">
+      <img src="/assets/images/hero-books.svg" alt="Stack of books illustration" width="420" loading="lazy">
+    </div>
   </div>
 </section>
 
-<section class="container featured-books">
+<section id="featured" class="container featured-books">
   <h2>Featured books</h2>
+  <p class="muted">Hand-picked titles to get you started.</p>
   <div class="grid books-grid">
-    {% for book in collections.books | slice(0,3) %}
+    {% for book in collections.books | slice(0,6) %}
       {% include "book-card.njk" with { book: book } %}
     {% endfor %}
   </div>
+</section>
+
+<section class="container browse-cats">
+  <h2>Browse by category</h2>
+  <div class="category-grid">
+    {% for cat in collections.categories %}
+      <a class="cat-card" href="/categories/{{ cat.slug }}/">
+        <div class="cat-name">{{ cat.name }}</div>
+        <div class="cat-count">{{ cat.items | length }} books</div>
+      </a>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="container why-choose">
+  <h2>Why choose our books?</h2>
+  <div class="grid why-grid">
+    <div class="why-item">
+      <h3>Premium design</h3>
+      <p>Thoughtful layouts, readable typography, and high-quality covers that stand out on Amazon and Pinterest.</p>
+    </div>
+    <div class="why-item">
+      <h3>Practical value</h3>
+      <p>Each book is created with readers in mind — practical, usable content that delivers results.</p>
+    </div>
+    <div class="why-item">
+      <h3>Thoughtful marketing</h3>
+      <p>SEO-optimized descriptions, pin-ready images, and focused metadata to increase discoverability on Google and Amazon.</p>
+    </div>
+  </div>
+</section>
+
+<section class="container lead-magnet">
+  <div class="lead-inner">
+    <div class="lead-copy">
+      <h2>Free printable planner</h2>
+      <p class="lead">Join our newsletter and get a free printable planner (A4 & US Letter) — designed to help your readers plan their week and stay productive.</p>
+      <form action="https://formspree.io/f/your-form-id" method="POST" class="newsletter" data-netlify="false">
+        <input type="hidden" name="_next" value="/downloads/free-printable.html">
+        <div class="row">
+          <input name="email" type="email" placeholder="Enter your email" required>
+          <button class="btn primary" type="submit">Get the printable</button>
+        </div>
+        <p class="small muted">We respect your privacy. No spam; unsubscribe anytime.</p>
+      </form>
+    </div>
+    <div class="lead-media" aria-hidden="true">
+      <img src="/assets/images/printable-preview.svg" alt="Printable preview" width="360" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="container latest-posts">
+  <h2>Latest from the blog</h2>
+  <div class="grid posts-grid">
+    {% for post in collections.posts | slice(0,3) %}
+      <article class="post-card">
+        <a href="{{ post.url }}"><h3>{{ post.data.title }}</h3></a>
+        <p class="muted small">{{ post.data.date | date("MMMM d, yyyy") }}</p>
+        <p class="card-meta">{{ post.data.excerpt }}</p>
+      </article>
+    {% else %}
+      <p class="muted">No posts yet — blog content will appear here once added.</p>
+    {% endfor %}
+  </div>
+  <p><a class="btn" href="/blog/">Read the blog</a></p>
 </section>

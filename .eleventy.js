@@ -1,6 +1,7 @@
 module.exports = function(eleventyConfig) {
-  // Passthrough copy for static assets
+  // Passthrough copy for static assets and downloads
   eleventyConfig.addPassthroughCopy("src/assets");
+  eleventyConfig.addPassthroughCopy("src/downloads");
 
   // Load books data directly so collections are available during build
   const booksData = require("./src/_data/books.json");
@@ -27,6 +28,13 @@ module.exports = function(eleventyConfig) {
       slug: name.toLowerCase().replace(/\s+/g, '-'),
       items
     }));
+  });
+
+  // Posts collection (from src/blog frontmatter files)
+  eleventyConfig.addCollection("posts", function(collectionApi) {
+    return collectionApi.getFilteredByGlob("src/blog/*.njk").sort(function(a,b){
+      return new Date(b.data.date) - new Date(a.data.date);
+    });
   });
 
   return {
