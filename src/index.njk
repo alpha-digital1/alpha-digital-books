@@ -1,0 +1,21 @@
+---
+layout: layouts/base.njk
+title: "Alpha Digital — Premium self-published books"
+---
+
+<section class="hero container">
+  <div class="hero-inner">
+    <h1>Alpha Digital Books</h1>
+    <p class="lead">Premium independent books on Amazon KDP. Discover journals, planners, coloring books, and activity books designed to delight readers and convert on Amazon.</p>
+    <p><a class="btn primary" href="/books/">Browse Books</a></p>
+  </div>
+</section>
+
+<section class="container featured-books">
+  <h2>Featured books</h2>
+  <div class="grid books-grid">
+    {% for book in collections.books | slice(0,3) %}
+      {% include "book-card.njk" with { book: book } %}
+    {% endfor %}
+  </div>
+</section>

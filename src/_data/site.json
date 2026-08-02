@@ -1,0 +1,21 @@
+{
+  "title": "Alpha Digital",
+  "description": "Alpha Digital — premium self-published books on Amazon KDP.",
+  "url": "https://alpha-digital1.github.io/alpha-digital-books/",
+  "palette": {
+    "primary": "#0B5F8A",
+    "accent": "#D07A2B",
+    "neutralDark": "#0F1724",
+    "neutralLight": "#FBFDFF",
+    "muted": "#6B7280"
+  },
+  "fonts": {
+    "heading": "Playfair Display",
+    "body": "Inter"
+  },
+  "siteAuthor": "Alpha Digital",
+  "pagination": {
+    "booksPerPage": 12,
+    "postsPerPage": 10
+  }
+}

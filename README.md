@@ -1,44 +1,26 @@
-# Alpha Digital Books — Static Site
+# Alpha Digital — Eleventy site (site/v2)
 
-This repository now contains a lightweight, mobile-first static website optimized for SEO and driving traffic to Amazon KDP book pages.
+This branch contains a new Eleventy-based site skeleton and data-driven architecture to power a scalable Amazon KDP marketing website.
 
-What I added (initial):
+Quick start (local):
 
-- index.html — Home (hero, featured books, newsletter signup placeholder)
-- books.html — Books listing
-- books/book-1.html, book-2.html, book-3.html — Individual book pages (placeholders)
-- blog/index.html and blog/post-example.html — Blog index + example post
-- about.html, contact.html — About and contact pages (Formspree placeholders)
-- assets/css/style.css — Mobile-first, minimal stylesheet
-- assets/js/main.js — Small JS for nav toggle and footer year
-- assets/images/* — simple SVG placeholder logo and book cover SVGs
-- sitemap.xml, robots.txt, rss.xml
+1. Install dependencies
 
-Instructions & next steps
+   npm install
 
-1. Replace placeholder images
-   - Put real book covers in assets/images and update the image paths in books pages.
+2. Run dev server
 
-2. Replace Formspree endpoints
-   - Update form action attributes in index.html and contact.html with your Formspree URL or your email provider endpoint.
+   npm run dev
 
-3. Update book pages
-   - Edit files in /books/ to add correct title, author, description, and Amazon buy links (replace "#" with your affiliate/ASIN URL).
-   - For structured data, update the JSON-LD block in each book page with accurate metadata (ISBN/ASIN, dates).
+Build for production:
 
-4. Add blog posts
-   - Add new files under /blog/ (e.g., post-title.html). Use H1 and meta description for SEO. Consider using a simple templating workflow if you plan many posts.
+   npm run build
 
-5. Deploy
-   - GitHub Pages: enable Pages in repo settings (serve from main branch / root). Your site will be at https://alpha-digital1.github.io/alpha-digital-books/
-   - Netlify: drag & drop the repo or connect via Git; set build settings (none required for static files).
+Project structure (src):
 
-6. SEO & analytics
-   - Add Google Analytics / Plausible snippets to assets/js/main.js or directly in templates.
-   - Consider adding canonical tags and optimizing meta descriptions per page.
+- src/_data/books.json  — central books data (single source of truth)
+- src/_includes/        — partials and layouts
+- src/index.njk         — homepage
+- src/privacy.njk, src/terms.njk, src/disclosure.njk, src/404.njk
 
-If you want, I can:
-- Add more book pages from a list (if you provide titles/ASINs/covers).
-- Convert the blog to a Markdown-based workflow (Jekyll/Hugo) so you can write posts as .md files.
-- Create a deploy workflow or PR for changes.
-
+Next steps: add assets (CSS, JS, images), implement book templates, search index, and image optimization pipeline. I will push incremental commits to this branch as I complete each feature so you can review progress and provide feedback.

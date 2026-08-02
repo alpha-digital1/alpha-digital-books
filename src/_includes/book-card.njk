@@ -1,0 +1,11 @@
+<article class="book-card">
+  <a href="/books/{{ book.slug }}/">
+    <img src="{{ book.cover_image }}" alt="Cover of {{ book.title }}" loading="lazy" width="300" height="450">
+  </a>
+  <div class="card-body">
+    <h3><a href="/books/{{ book.slug }}/">{{ book.title }}</a></h3>
+    <p class="muted">{{ book.authors | join(", ") }}</p>
+    <p class="card-meta">{{ book.short_description }}</p>
+    <p class="card-ctas"><a class="btn" href="/books/{{ book.slug }}/">View</a> <a class="btn amazon" href="{{ book.amazon_url }}" target="_blank" rel="noopener">Buy on Amazon</a></p>
+  </div>
+</article>
