@@ -1,23 +1,17 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ title | default(site.title) }}</title>
-    <meta name="description" content="{{ description | default(site.description) }}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/main.css">
-  </head>
-  <body>
-    {% include "header.njk" %}
+{% include "seo.njk" %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+  {% include "header.njk" %}
 
-    <main id="main" class="page-wrap">
-      {{ content | safe }}
-    </main>
+  <main id="main" class="page-wrap">
+    {{ content | safe }}
+  </main>
 
-    {% include "footer.njk" %}
+  {% include "footer.njk" %}
 
-  </body>
+</body>
 </html>

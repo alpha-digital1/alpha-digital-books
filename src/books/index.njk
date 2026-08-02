@@ -1,0 +1,15 @@
+---
+layout: layouts/base.njk
+title: "Books — Alpha Digital"
+permalink: /books/
+---
+
+<section class="container">
+  <h1>Books</h1>
+  <p class="lead muted">Browse our catalog. Use filters or search to find the perfect title.</p>
+  <div class="grid books-grid">
+    {% for book in collections.books %}
+      {% include "book-card.njk" with { book: book } %}
+    {% endfor %}
+  </div>
+</section>

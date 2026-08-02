@@ -1,0 +1,46 @@
+{% set related = [] %}
+{# Prefer explicit related list if present #}
+{% if current.related and current.related | length > 0 %}
+  {% for rid in current.related %}
+    {% for b in collections.books %}
+      {% if b.id == rid %}
+        {% do related.append(b) %}
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+{% endif %}
+
+{# Fallback: compute by category/tag overlap #}
+{% if related | length == 0 %}
+  {% for b in collections.books %}
+    {% if b.id != current.id %}
+      {% set score = 0 %}
+      {% for cat in current.categories %}
+        {% if cat in b.categories %}
+          {% set score = score + 2 %}
+        {% endif %}
+      {% endfor %}
+      {% for tag in current.tags %}
+        {% if tag in b.tags %}
+          {% set score = score + 1 %}
+        {% endif %}
+      {% endfor %}
+      {% if score > 0 %}
+        {% do related.append({ 'book': b, 'score': score }) %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  {# sort fallback related by score desc and pick top 4 #}
+  {% set related = related | sort(attribute='score', reverse=true) | map('book') | slice(0,4) %}
+{% endif %}
+
+{% if related and related | length > 0 %}
+  <section class="related container">
+    <h2>Related books</h2>
+    <div class="grid books-grid">
+      {% for r in related | slice(0,4) %}
+        {% include "book-card.njk" with { book: r } %}
+      {% endfor %}
+    </div>
+  </section>
+{% endif %}
