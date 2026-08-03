@@ -4,10 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "eleventy --serve",
-    "build": "eleventy",
+    "build": "node scripts/optimize-images.js && eleventy",
+    "optimize-images": "node scripts/optimize-images.js",
     "start": "npm run dev"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1"
+    "@11ty/eleventy": "^2.0.1",
+    "sharp": "^0.31.3"
   }
 }
