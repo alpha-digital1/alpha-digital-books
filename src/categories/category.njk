@@ -1,0 +1,69 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: collections.categories
+  size: 1
+  alias: category
+permalink: "/categories/{{ category.slug }}/"
+eleventyComputed:
+  title: "{{ ( (categories | findattr('slug', category.slug) ).seo_title ) | default(category.name + ' — ' + site.title) }}"
+  description: "{{ ( (categories | findattr('slug', category.slug) ).seo_description ) | default('Browse ' + category.name + ' from Alpha Digital.') }}"
+---
+
+<nav class="breadcrumbs container">
+  <a href="/">Home</a> &raquo; <a href="/categories/">Categories</a> &raquo; <span aria-current="page">{{ category.name }}</span>
+</nav>
+
+<section class="container category-landing">
+  <header>
+    <h1>{{ category.name }}</h1>
+    {% set meta = (categories | selectattr('slug','equalto', category.slug) | list).0 %}
+    {% if meta %}
+      <p class="muted">{{ meta.description }}</p>
+    {% endif %}
+  </header>
+
+  <div class="category-controls">
+    <label for="sort-select" class="small muted">Sort:</label>
+    <select id="sort-select" aria-label="Sort books">
+      <option value="newest">Newest</option>
+      <option value="az">A–Z</option>
+      <option value="featured">Featured</option>
+    </select>
+    <input id="category-search" type="search" placeholder="Search within {{ category.name }}" aria-label="Search within category">
+  </div>
+
+  <div id="category-books" class="grid books-grid" data-initial-count="12">
+    {% for b in category.items %}
+      {% include "book-card.njk" with { book: b } %}
+    {% endfor %}
+  </div>
+
+  <div class="category-footer">
+    <p class="muted">Related categories:</p>
+    <div class="related-cats">
+      {% for c in collections.categories | slice(0,5) %}
+        {% if c.slug != category.slug %}
+          <a class="cat-card small" href="/categories/{{ c.slug }}/">{{ c.name }}</a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="newsletter-bottom">
+    <h3>Want more like this?</h3>
+    <form action="https://formspree.io/f/your-form-id" method="POST">
+      <input name="email" type="email" placeholder="Your email" required>
+      <button class="btn primary" type="submit">Join</button>
+    </form>
+  </div>
+</section>
+
+<script>
+// Embed category items as JSON for client-side sorting/search/pagination
+window.ADB_CATEGORY = {
+  slug: "{{ category.slug }}",
+  name: "{{ category.name }}",
+  items: {{ category.items | dump | safe }}
+};
+</script>

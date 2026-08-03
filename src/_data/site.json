@@ -17,5 +17,6 @@
   "pagination": {
     "booksPerPage": 12,
     "postsPerPage": 10
-  }
+  },
+  "affiliate_tag": "" 
 }

@@ -3,8 +3,25 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/downloads");
 
-  // Load books data directly so collections are available during build
+  // Load site data and books data
+  const siteData = require("./src/_data/site.json");
   const booksData = require("./src/_data/books.json");
+
+  // Helper: addAffiliate filter will append a site-wide affiliate tag if configured
+  eleventyConfig.addFilter("addAffiliate", function(url) {
+    try {
+      if(!url) return url;
+      const tag = (siteData && siteData.affiliate_tag) ? siteData.affiliate_tag.trim() : "";
+      if(!tag) return url;
+      // If url already has query params, append with &, otherwise ?
+      const sep = url.indexOf('?') === -1 ? '?' : '&';
+      // Avoid double-adding if tag already present
+      if(url.indexOf(tag) !== -1) return url;
+      return url + sep + tag;
+    } catch(e) {
+      return url;
+    }
+  });
 
   // Books collection (sorted newest first)
   eleventyConfig.addCollection("books", function(collectionApi) {

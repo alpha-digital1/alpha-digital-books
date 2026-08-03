@@ -1,0 +1,25 @@
+---
+layout: layouts/base.njk
+title: "Categories — Alpha Digital"
+permalink: /categories/
+---
+
+<section class="container">
+  <h1>Categories</h1>
+  <p class="muted">Browse by category to find the books that match your interests.</p>
+  <div class="category-grid">
+    {% for cat in collections.categories %}
+      {% set meta = (categories | selectattr('slug','equalto', cat.slug) | list).0 %}
+      <a class="cat-card" href="/categories/{{ cat.slug }}/">
+        <div class="cat-name">{{ cat.name }}</div>
+        {% if meta and meta.featured_image %}
+          <img src="{{ meta.featured_image }}" alt="{{ cat.name }}" loading="lazy" style="max-width:100%;height:auto;border-radius:6px;margin-top:.5rem">
+        {% endif %}
+        <div class="cat-count">{{ cat.items | length }} books</div>
+        {% if meta and meta.seo_description %}
+          <p class="muted small">{{ meta.seo_description }}</p>
+        {% endif %}
+      </a>
+    {% endfor %}
+  </div>
+</section>

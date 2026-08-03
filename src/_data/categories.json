@@ -1,0 +1,47 @@
+[
+  {
+    "slug": "coloring-books",
+    "name": "Coloring Books",
+    "seo_title": "Coloring Books — Alpha Digital",
+    "seo_description": "Coloring books for adults and kids. High-quality printable pages and themed designs perfect for relaxation and creativity.",
+    "featured_image": "/assets/images/pins/coloring-books-pin.jpg",
+    "order": 1,
+    "description": "Creative, themed coloring books for all ages. Great for relaxation and gift-giving."
+  },
+  {
+    "slug": "journals",
+    "name": "Journals",
+    "seo_title": "Journals — Alpha Digital",
+    "seo_description": "Premium journals with guided layouts and minimalist design to help readers capture ideas and build habits.",
+    "featured_image": "/assets/images/pins/journals-pin.jpg",
+    "order": 2,
+    "description": "Thoughtfully designed journals for daily reflection, goal tracking, and creativity."
+  },
+  {
+    "slug": "planners",
+    "name": "Planners",
+    "seo_title": "Planners — Alpha Digital",
+    "seo_description": "Productivity planners and printable planners to help readers organize their weeks and reach their goals.",
+    "featured_image": "/assets/images/pins/planners-pin.jpg",
+    "order": 3,
+    "description": "Functional planners focusing on habit-building, goal-setting, and time management."
+  },
+  {
+    "slug": "activity-books",
+    "name": "Activity Books",
+    "seo_title": "Activity Books — Alpha Digital",
+    "seo_description": "Fun activity books for kids and families, full of puzzles, games, and creative projects.",
+    "featured_image": "/assets/images/pins/activity-books-pin.jpg",
+    "order": 4,
+    "description": "Engaging activity books with puzzles, mazes, and hands-on projects for kids."
+  },
+  {
+    "slug": "notebooks",
+    "name": "Notebooks",
+    "seo_title": "Notebooks — Alpha Digital",
+    "seo_description": "Minimalist notebooks and composition books for writers, students, and professionals.",
+    "featured_image": "/assets/images/pins/notebooks-pin.jpg",
+    "order": 5,
+    "description": "Clean, simple notebooks for notes, sketches, and daily use."
+  }
+]
