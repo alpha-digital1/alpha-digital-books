@@ -1,0 +1,4 @@
+# Netlify redirects and basic routing
+/*  /index.html  200
+# Redirects for pretty URLs
+/*    /index.html   200

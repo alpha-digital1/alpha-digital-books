@@ -1,0 +1,26 @@
+[
+  {
+    "slug": "jane-author",
+    "name": "Jane Author",
+    "bio": "Jane Author writes practical planners and journals focused on productivity and wellbeing.",
+    "avatar": "/assets/images/authors/jane-author.jpg",
+    "website": "#",
+    "twitter": "#"
+  },
+  {
+    "slug": "john-writer",
+    "name": "John Writer",
+    "bio": "John Writer creates activity books and fun projects for families and kids.",
+    "avatar": "/assets/images/authors/john-writer.jpg",
+    "website": "#",
+    "twitter": "#"
+  },
+  {
+    "slug": "alex-creator",
+    "name": "Alex Creator",
+    "bio": "Alex Creator designs minimalist notebooks and creative tools for writers.",
+    "avatar": "/assets/images/authors/alex-creator.jpg",
+    "website": "#",
+    "twitter": "#"
+  }
+]

@@ -1,0 +1,32 @@
+---
+layout: layouts/base.njk
+title: "Blog — Alpha Digital"
+pagination:
+  data: collections.posts
+  size: {{ site.pagination.postsPerPage }}
+  alias: posts
+  reverse: false
+permalink: "/blog/{{ (pagination.pageNumber == 0) ? '' : ('page/' + (pagination.pageNumber + 1) + '/')}}"
+---
+
+<section class="container">
+  <h1>Blog</h1>
+  <div class="grid posts-grid">
+    {% for post in posts %}
+      <article class="post-card">
+        <a href="{{ post.url }}"><h3>{{ post.data.title }}</h3></a>
+        <p class="muted small">{{ post.data.date | date("MMMM d, yyyy") }}</p>
+        <p class="card-meta">{{ post.data.excerpt }}</p>
+      </article>
+    {% endfor %}
+  </div>
+
+  <nav class="pagination small">
+    {% if pagination.href.previous %}
+      <a class="btn" href="{{ pagination.href.previous }}">Previous</a>
+    {% endif %}
+    {% if pagination.href.next %}
+      <a class="btn" href="{{ pagination.href.next }}">Next</a>
+    {% endif %}
+  </nav>
+</section>

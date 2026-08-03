@@ -1,0 +1,21 @@
+---
+layout: layouts/base.njk
+permalink: /rss.xml
+---
+{% set feedItems = collections.posts | slice(0, 20) %}
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>{{ site.title }}</title>
+    <link>{{ site.url }}</link>
+    <description>{{ site.description }}</description>
+    {% for item in feedItems %}
+    <item>
+      <title>{{ item.data.title }}</title>
+      <link>{{ site.url | trimRight('/') }}{{ item.url }}</link>
+      <pubDate>{{ item.data.date | date('r') }}</pubDate>
+      <description>{{ item.data.excerpt }}</description>
+    </item>
+    {% endfor %}
+  </channel>
+</rss>

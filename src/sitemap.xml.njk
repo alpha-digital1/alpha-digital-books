@@ -1,0 +1,34 @@
+---
+layout: layouts/base.njk
+permalink: /sitemap.xml
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {% for page in collections.posts %}
+    <url>
+      <loc>{{ site.url | trimRight('/') }}{{ page.url }}</loc>
+      <lastmod>{{ page.date | date('yyyy-MM-dd') }}</lastmod>
+    </url>
+  {% endfor %}
+  {% for book in collections.books %}
+    <url>
+      <loc>{{ site.url | trimRight('/') }}/books/{{ book.slug }}/</loc>
+      <lastmod>{{ book.publish_date }}</lastmod>
+    </url>
+  {% endfor %}
+  {% for cat in collections.categories %}
+    <url>
+      <loc>{{ site.url | trimRight('/') }}/categories/{{ cat.slug }}/</loc>
+    </url>
+  {% endfor %}
+  {% for a in collections.authors %}
+    <url>
+      <loc>{{ site.url | trimRight('/') }}/authors/{{ a.slug }}/</loc>
+    </url>
+  {% endfor %}
+  <url><loc>{{ site.url | trimRight('/') }}/</loc></url>
+  <url><loc>{{ site.url | trimRight('/') }}/books/</loc></url>
+  <url><loc>{{ site.url | trimRight('/') }}/blog/</loc></url>
+  <url><loc>{{ site.url | trimRight('/') }}/categories/</loc></url>
+  <url><loc>{{ site.url | trimRight('/') }}/authors/</loc></url>
+</urlset>

@@ -1,0 +1,35 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: collections.authors
+  size: 1
+  alias: author
+permalink: "/authors/{{ author.slug }}/"
+eleventyComputed:
+  title: "{{ author.name }} — {{ site.title }}"
+  description: "Books and bio for {{ author.name }}"
+---
+
+<nav class="breadcrumbs container">
+  <a href="/">Home</a> &raquo; <a href="/authors/">Authors</a> &raquo; <span aria-current="page">{{ author.name }}</span>
+</nav>
+
+<section class="container author-page">
+  <div class="author-header">
+    <img src="{{ author.avatar }}" alt="{{ author.name }}" width="120" height="120">
+    <div>
+      <h1>{{ author.name }}</h1>
+      <p class="muted">{{ author.bio }}</p>
+      <p class="small"><a href="{{ author.website }}">Website</a> • <a href="{{ author.twitter }}">Twitter</a></p>
+    </div>
+  </div>
+
+  <h2>Books by {{ author.name }}</h2>
+  <div class="grid books-grid">
+    {% for b in author.books %}
+      {% include "book-card.njk" with { book: b } %}
+    {% else %}
+      <p class="muted">No books found for this author yet.</p>
+    {% endfor %}
+  </div>
+</section>

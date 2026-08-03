@@ -6,13 +6,22 @@ excerpt: "Practical tips for marketing your book on Amazon KDP to increase visib
 ---
 
 <article class="container post">
-  <h1>How to Market Your Book on Amazon</h1>
-  <p class="muted small">Jan 1, 2026 • 8 min read</p>
+  <h1>{{ title }}</h1>
+  <p class="muted small">{{ date | date("MMMM d, yyyy") }} • 8 min read</p>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "{{ title | escape }}",
+    "datePublished": "{{ date }}",
+    "author": { "@type": "Person", "name": "Alpha Digital" },
+    "description": "{{ excerpt | escape }}",
+    "mainEntityOfPage": "{{ site.url | trimRight('/') }}{{ page.url }}"
+  }
+  </script>
+
   <p>Start with compelling metadata: keywords, categories, and a benefits-focused description. Use promotions and ads strategically, gather reviews, and drive external traffic from a blog and newsletter.</p>
   <h2>1. Optimize your metadata</h2>
   <p>Explain keywords & categories...</p>
-  <h2>2. Use blog content to attract organic traffic</h2>
-  <p>Write posts that answer search queries your target readers use.</p>
-  <h2>3. Measure & iterate</h2>
-  <p>Use Amazon reports and external analytics to refine your approach.</p>
 </article>

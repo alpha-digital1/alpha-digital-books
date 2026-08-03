@@ -3,9 +3,11 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/downloads");
 
-  // Load site data and books data
+  // Load site data, books data, authors
   const siteData = require("./src/_data/site.json");
   const booksData = require("./src/_data/books.json");
+  let authorsData = [];
+  try { authorsData = require("./src/_data/authors.json"); } catch(e) { authorsData = []; }
 
   // Helper: addAffiliate filter will append a site-wide affiliate tag if configured
   eleventyConfig.addFilter("addAffiliate", function(url) {
@@ -13,9 +15,7 @@ module.exports = function(eleventyConfig) {
       if(!url) return url;
       const tag = (siteData && siteData.affiliate_tag) ? siteData.affiliate_tag.trim() : "";
       if(!tag) return url;
-      // If url already has query params, append with &, otherwise ?
       const sep = url.indexOf('?') === -1 ? '?' : '&';
-      // Avoid double-adding if tag already present
       if(url.indexOf(tag) !== -1) return url;
       return url + sep + tag;
     } catch(e) {
@@ -45,6 +45,15 @@ module.exports = function(eleventyConfig) {
       slug: name.toLowerCase().replace(/\s+/g, '-'),
       items
     }));
+  });
+
+  // Authors collection derived from authors.json and books.json
+  eleventyConfig.addCollection("authors", function(collectionApi) {
+    return (authorsData || []).map(author => {
+      // find books by this author (match by name)
+      const books = (booksData.books || []).filter(b => (b.authors || []).indexOf(author.name) !== -1);
+      return Object.assign({}, author, { books });
+    });
   });
 
   // Posts collection (from src/blog frontmatter files)

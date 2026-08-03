@@ -1,0 +1,21 @@
+---
+layout: layouts/base.njk
+title: "Authors — Alpha Digital"
+permalink: /authors/
+---
+
+<section class="container">
+  <h1>Authors</h1>
+  <p class="muted">Meet the creators behind our books.</p>
+  <div class="grid author-grid">
+    {% for a in collections.authors %}
+      <a class="author-card" href="/authors/{{ a.slug }}/">
+        <img src="{{ a.avatar }}" alt="{{ a.name }}" width="120" height="120">
+        <div>
+          <h3>{{ a.name }}</h3>
+          <p class="muted small">{{ a.bio }}</p>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+</section>
