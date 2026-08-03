@@ -1,0 +1,22 @@
+<div id="searchOverlay" class="search-overlay" aria-hidden="true">
+  <div class="search-panel" role="dialog" aria-modal="true" aria-labelledby="searchTitle">
+    <div class="search-header">
+      <h2 id="searchTitle">Search books</h2>
+      <button id="searchClose" class="search-close" aria-label="Close search">✕</button>
+    </div>
+
+    <div class="search-controls">
+      <input id="searchInput" type="search" placeholder="Search by title, author, tags, category..." aria-label="Search books" autocomplete="off">
+      <div class="filters">
+        <label><input type="checkbox" value="" id="filterAll" checked> All categories</label>
+        <div id="filterList" class="filter-list" aria-hidden="false"></div>
+      </div>
+    </div>
+
+    <div class="search-results" id="searchResults" role="listbox" aria-live="polite"></div>
+
+    <div class="search-footer small muted">Press <kbd>/</kbd> to open search • Use arrow keys to navigate • Enter to open result</div>
+  </div>
+</div>
+
+<button id="searchOpenBtn" class="search-open" aria-label="Open search">Search</button>

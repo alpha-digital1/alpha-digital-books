@@ -1,0 +1,28 @@
+[
+  {% for b in collections.books %}
+  {
+    "title": "{{ b.title | escape }}",
+    "slug": "{{ b.slug }}",
+    "authors": [
+      {% for a in b.authors %}
+        "{{ a | escape }}"{% if not loop.last %},{% endif %}
+      {% endfor %}
+    ],
+    "categories": [
+      {% for c in b.categories %}
+        "{{ c | escape }}"{% if not loop.last %},{% endif %}
+      {% endfor %}
+    ],
+    "tags": [
+      {% for t in (b.tags or []) %}
+        "{{ t | escape }}"{% if not loop.last %},{% endif %}
+      {% endfor %}
+    ],
+    "short_description": "{{ (b.short_description or '') | escape }}",
+    "seo_description": "{{ (b.seo_description or '') | escape }}",
+    "cover_image": "{{ b.cover_image }}",
+    "pin_image": "{{ b.pin_image }}",
+    "publish_date": "{{ b.publish_date }}"
+  }{% if not loop.last %},{% endif %}
+  {% endfor %}
+]
