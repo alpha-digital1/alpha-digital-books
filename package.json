@@ -6,10 +6,13 @@
     "dev": "eleventy --serve",
     "build": "node scripts/optimize-images.js && eleventy",
     "optimize-images": "node scripts/optimize-images.js",
+    "audit:seo": "node scripts/seo-audit.js",
+    "audit:a11y": "echo \"Run pa11y or axe locally against the dev server (see README)\"",
     "start": "npm run dev"
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
-    "sharp": "^0.31.3"
+    "sharp": "^0.31.3",
+    "pa11y": "^6.0.0"
   }
 }

@@ -1,0 +1,10 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "{{ author.name | escape }}",
+  {% if author.avatar %}"image": "{{ site.url | trimRight('/') }}{{ author.avatar }}",{% endif %}
+  "description": "{{ author.bio | escape }}",
+  "url": "{{ site.url | trimRight('/') }}/authors/{{ author.slug }}/"
+}
+</script>

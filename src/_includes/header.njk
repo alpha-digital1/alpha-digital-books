@@ -1,15 +1,43 @@
-<header class="site-header">
+<header class="site-header" role="banner">
   <div class="container header-inner">
-    <a class="brand" href="{{ site.url }}">
+    <a class="brand" href="{{ site.url }}" aria-label="{{ site.title }} home">
       <img src="/assets/images/logo.svg" alt="{{ site.title }} logo" class="logo" width="64" height="64">
       <span class="brand-text">{{ site.title }}</span>
     </a>
-    <nav class="site-nav">
+
+    <nav class="site-nav" role="navigation" aria-label="Main navigation">
       <a href="/">Home</a>
       <a href="/books/">Books</a>
       <a href="/categories/">Categories</a>
       <a href="/blog/">Blog</a>
+      <a href="/authors/">Authors</a>
       <a href="/about/">About</a>
     </nav>
+
+    <div class="header-actions">
+      <button id="mobileNavToggle" class="mobile-nav-toggle" aria-expanded="false" aria-controls="mobileNav">☰</button>
+    </div>
   </div>
+
+  <nav id="mobileNav" class="mobile-nav" aria-hidden="true" aria-label="Mobile navigation">
+    <a href="/">Home</a>
+    <a href="/books/">Books</a>
+    <a href="/categories/">Categories</a>
+    <a href="/blog/">Blog</a>
+    <a href="/authors/">Authors</a>
+    <a href="/about/">About</a>
+  </nav>
+
+  <script>
+    (function(){
+      var btn = document.getElementById('mobileNavToggle');
+      var nav = document.getElementById('mobileNav');
+      if(!btn || !nav) return;
+      btn.addEventListener('click', function(){
+        var expanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', String(!expanded));
+        nav.setAttribute('aria-hidden', String(expanded));
+      });
+    })();
+  </script>
 </header>

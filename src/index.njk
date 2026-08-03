@@ -69,7 +69,8 @@ description: "Premium independent books on Amazon KDP. Browse journals, planners
       <form action="https://formspree.io/f/your-form-id" method="POST" class="newsletter" data-netlify="false">
         <input type="hidden" name="_next" value="/downloads/free-printable.html">
         <div class="row">
-          <input name="email" type="email" placeholder="Enter your email" required>
+          <label for="lead-email" class="visually-hidden">Email address</label>
+          <input id="lead-email" name="email" type="email" placeholder="Enter your email" required aria-label="Email address">
           <button class="btn primary" type="submit">Get the printable</button>
         </div>
         <p class="small muted">We respect your privacy. No spam; unsubscribe anytime.</p>

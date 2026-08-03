@@ -30,6 +30,7 @@ eleventyComputed:
       <option value="az">A–Z</option>
       <option value="featured">Featured</option>
     </select>
+    <label for="category-search" class="visually-hidden">Search within category</label>
     <input id="category-search" type="search" placeholder="Search within {{ category.name }}" aria-label="Search within category">
   </div>
 
@@ -53,7 +54,8 @@ eleventyComputed:
   <div class="newsletter-bottom">
     <h3>Want more like this?</h3>
     <form action="https://formspree.io/f/your-form-id" method="POST">
-      <input name="email" type="email" placeholder="Your email" required>
+      <label for="cat-email" class="visually-hidden">Your email</label>
+      <input id="cat-email" name="email" type="email" placeholder="Your email" required aria-label="Your email">
       <button class="btn primary" type="submit">Join</button>
     </form>
   </div>
