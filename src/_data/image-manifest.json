@@ -1,1 +1,20 @@
-{}
+{
+  "/assets/images/covers/sample-book-1.webp": {
+    "avif_srcset": "/assets/images/generated/covers/sample-book-1-320.avif 320w, /assets/images/generated/covers/sample-book-1-480.avif 480w, /assets/images/generated/covers/sample-book-1-720.avif 720w, /assets/images/generated/covers/sample-book-1-1024.avif 1024w, /assets/images/generated/covers/sample-book-1-1400.avif 1400w",
+    "webp_srcset": "/assets/images/generated/covers/sample-book-1-320.webp 320w, /assets/images/generated/covers/sample-book-1-480.webp 480w, /assets/images/generated/covers/sample-book-1-720.webp 720w, /assets/images/generated/covers/sample-book-1-1024.webp 1024w, /assets/images/generated/covers/sample-book-1-1400.webp 1400w",
+    "jpg_srcset": "/assets/images/generated/covers/sample-book-1-320.jpg 320w, /assets/images/generated/covers/sample-book-1-480.jpg 480w, /assets/images/generated/covers/sample-book-1-720.jpg 720w, /assets/images/generated/covers/sample-book-1-1024.jpg 1024w, /assets/images/generated/covers/sample-book-1-1400.jpg 1400w",
+    "fallback": "/assets/images/generated/covers/sample-book-1-320.jpg"
+  },
+  "/assets/images/covers/sample-book-2.webp": {
+    "avif_srcset": "/assets/images/generated/covers/sample-book-2-320.avif 320w, /assets/images/generated/covers/sample-book-2-480.avif 480w, /assets/images/generated/covers/sample-book-2-720.avif 720w, /assets/images/generated/covers/sample-book-2-1024.avif 1024w, /assets/images/generated/covers/sample-book-2-1400.avif 1400w",
+    "webp_srcset": "/assets/images/generated/covers/sample-book-2-320.webp 320w, /assets/images/generated/covers/sample-book-2-480.webp 480w, /assets/images/generated/covers/sample-book-2-720.webp 720w, /assets/images/generated/covers/sample-book-2-1024.webp 1024w, /assets/images/generated/covers/sample-book-2-1400.webp 1400w",
+    "jpg_srcset": "/assets/images/generated/covers/sample-book-2-320.jpg 320w, /assets/images/generated/covers/sample-book-2-480.jpg 480w, /assets/images/generated/covers/sample-book-2-720.jpg 720w, /assets/images/generated/covers/sample-book-2-1024.jpg 1024w, /assets/images/generated/covers/sample-book-2-1400.jpg 1400w",
+    "fallback": "/assets/images/generated/covers/sample-book-2-320.jpg"
+  },
+  "/assets/images/covers/sample-book-3.webp": {
+    "avif_srcset": "/assets/images/generated/covers/sample-book-3-320.avif 320w, /assets/images/generated/covers/sample-book-3-480.avif 480w, /assets/images/generated/covers/sample-book-3-720.avif 720w, /assets/images/generated/covers/sample-book-3-1024.avif 1024w, /assets/images/generated/covers/sample-book-3-1400.avif 1400w",
+    "webp_srcset": "/assets/images/generated/covers/sample-book-3-320.webp 320w, /assets/images/generated/covers/sample-book-3-480.webp 480w, /assets/images/generated/covers/sample-book-3-720.webp 720w, /assets/images/generated/covers/sample-book-3-1024.webp 1024w, /assets/images/generated/covers/sample-book-3-1400.webp 1400w",
+    "jpg_srcset": "/assets/images/generated/covers/sample-book-3-320.jpg 320w, /assets/images/generated/covers/sample-book-3-480.jpg 480w, /assets/images/generated/covers/sample-book-3-720.jpg 720w, /assets/images/generated/covers/sample-book-3-1024.jpg 1024w, /assets/images/generated/covers/sample-book-3-1400.jpg 1400w",
+    "fallback": "/assets/images/generated/covers/sample-book-3-320.jpg"
+  }
+}
