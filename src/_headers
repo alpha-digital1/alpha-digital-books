@@ -1,0 +1,25 @@
+/* Netlify _headers file to set caching and security headers */
+/* Serve static assets with long cache TTL and immutable for generated images */
+/assets/images/generated/*
+  Cache-Control: public, max-age=31536000, immutable
+/assets/css/*
+  Cache-Control: public, max-age=31536000
+/assets/js/*
+  Cache-Control: public, max-age=31536000
+/assets/images/*
+  Cache-Control: public, max-age=31536000
+
+/* HTML: short TTL so new deployments show quickly */
+/* root HTML and other pages */
+/* Setting it on all HTML files via pattern */
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/* Security headers */
+/* apply to all routes */
+/* Note: some headers may be adjusted depending on your backend setup */
+/* Add Header rules for all files */
+/* These are examples and can be customized */
+/* <all_urls> */
+/*  X-Frame-Options: DENY */
+/*  X-Content-Type-Options: nosniff */
