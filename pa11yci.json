@@ -1,0 +1,14 @@
+{
+  "defaults": {
+    "standard": "WCAG2AA",
+    "wait": 300
+  },
+  "urls": [
+    "http://localhost:8080/",
+    "http://localhost:8080/books/",
+    "http://localhost:8080/categories/",
+    "http://localhost:8080/blog/",
+    "http://localhost:8080/authors/"
+  ],
+  "level": "error"
+}

@@ -7,12 +7,15 @@
     "build": "node scripts/optimize-images.js && eleventy",
     "optimize-images": "node scripts/optimize-images.js",
     "audit:seo": "node scripts/seo-audit.js",
-    "audit:a11y": "echo \"Run pa11y or axe locally against the dev server (see README)\"",
+    "audit:a11y": "pa11y-ci --config=pa11yci.json",
+    "audit:perf": "lhci autorun --config=lhci.config.js",
+    "audit:all": "npm run build && npm run audit:seo && npm run audit:a11y && npm run audit:perf",
     "start": "npm run dev"
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
     "sharp": "^0.31.3",
-    "pa11y": "^6.0.0"
+    "pa11y-ci": "^6.0.0",
+    "lhci": "^0.10.2"
   }
 }

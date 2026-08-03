@@ -10,22 +10,32 @@ eleventyComputed:
   description: "{{ book.seo_description | default(book.short_description) }}"
 ---
 
+{# Preload the book cover to improve LCP on book pages #}
+<link rel="preload" as="image" href="{{ book.cover_image }}">
+
 <nav class="breadcrumbs container">
   <a href="/">Home</a> &raquo; <a href="/books/">Books</a> &raquo; <span aria-current="page">{{ book.title }}</span>
 </nav>
 
 <article class="container book-page">
+  <style>
+    /* Small critical CSS for book page above-the-fold */
+    .book-grid{display:flex;gap:1.5rem;align-items:flex-start}
+    .book-cover{max-width:360px;border-radius:8px}
+    @media(max-width:900px){.book-grid{flex-direction:column}.book-cover{width:100%}}
+  </style>
+
   <div class="book-grid">
     <div>
       <img src="{{ book.cover_image }}" alt="Cover of {{ book.title }}" class="book-cover" loading="lazy" width="400" height="600">
     </div>
     <div>
       <h1>{{ book.title }}</h1>
-      <p class="muted">by {{ book.authors | join(', ') }}</p>
+      <p class="muted">by {% for a in book.authors %}<a href="/authors/{{ a | slug }}/">{{ a }}</a>{% if not loop.last %}, {% endif %}{% endfor %}</p>
       <p class="lead">{{ book.short_description }}</p>
 
       <p class="book-actions">
-        <a class="btn amazon large" href="{{ book.amazon_url | default('#') }}" target="_blank" rel="noopener noreferrer">Buy on Amazon</a>
+        <a class="btn amazon large" href="{{ book.amazon_url | addAffiliate }}" target="_blank" rel="noopener noreferrer">Buy on Amazon</a>
         {% if book.affiliate_url %}
           <a class="btn" href="{{ book.affiliate_url }}" target="_blank" rel="noopener noreferrer">Buy (affiliate)</a>
         {% endif %}
