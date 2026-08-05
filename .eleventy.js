@@ -23,6 +23,17 @@ module.exports = function(eleventyConfig) {
     }
   });
 
+  // slugify filter for generating author/book slugs in templates
+  eleventyConfig.addFilter("slugify", function(value) {
+    if(!value) return "";
+    return String(value)
+      .toLowerCase()
+      .trim()
+      .replace(/\s+/g, '-')         // replace spaces with -
+      .replace(/[^a-z0-9\-]/g, '')  // remove invalid chars
+      .replace(/\-+/g, '-');        // collapse dashes
+  });
+
   // Books collection (sorted newest first)
   eleventyConfig.addCollection("books", function(collectionApi) {
     return (booksData.books || []).slice().sort(function(a,b){
